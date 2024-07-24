@@ -37,51 +37,6 @@ string getPassword() {
     } while (true);
 }
 
-CheckPassword(string password)
-{
-    // Check if the password is empty
-    if (string.IsNullOrWhiteSpace(password)) {
-        Console.WriteLine("Password cannot be empty.");
-        return false;
-    }
-
-    // Check if the password is at least 8 characters long
-    if (password.Length < 8) {
-        Console.WriteLine("Password must be at least 8 characters long.");
-        return false;
-    }
-
-    if (password.Any(char.IsWhiteSpace)) {
-        Console.WriteLine("Password cannot contain whitespace.");
-        return false;
-    }
-
-    return true;
-}
-
-CheckUsername(string username)
-{
-    // Check if the username is empty
-    if (string.IsNullOrWhiteSpace(username)) {
-        Console.WriteLine("Username cannot be empty.");
-        return false;
-    }
-
-    // Check if the username contains any invalid characters
-    if (!username.All(char.IsLetterOrDigit)) {
-        Console.WriteLine("Username can only contain letters and digits.");
-        return false;
-    }
-
-    // Check if the username is already taken
-    if (accounts.Any(account => account.Item1 == username)) {
-        Console.WriteLine("Username is already taken.");
-        return false;
-    }
-
-    return true;
-}
-
 class Bank
 {
     private Tuple<string, string>[] accounts;
@@ -91,6 +46,51 @@ class Bank
         accounts = [
             new Tuple<string, string>("Joe.Doe", "Password123")
         ];
+    }
+
+    bool CheckPassword(string password)
+    {
+        // Check if the password is empty
+        if (string.IsNullOrWhiteSpace(password)) {
+            Console.WriteLine("Password cannot be empty.");
+            return false;
+        }
+
+        // Check if the password is at least 8 characters long
+        if (password.Length < 8) {
+            Console.WriteLine("Password must be at least 8 characters long.");
+            return false;
+        }
+
+        if (password.Any(char.IsWhiteSpace)) {
+            Console.WriteLine("Password cannot contain whitespace.");
+            return false;
+        }
+
+        return true;
+    }
+
+    bool CheckUsername(string username)
+    {
+        // Check if the username is empty
+        if (string.IsNullOrWhiteSpace(username)) {
+            Console.WriteLine("Username cannot be empty.");
+            return false;
+        }
+
+        // Check if the username contains any invalid characters
+        if (!username.All(char.IsLetterOrDigit)) {
+            Console.WriteLine("Username can only contain letters and digits.");
+            return false;
+        }
+
+        // Check if the username is already taken
+        if (this.accounts.Any(account => account.Item1 == username)) {
+            Console.WriteLine("Username is already taken.");
+            return false;
+        }
+
+        return true;
     }
  
     public void Login()
