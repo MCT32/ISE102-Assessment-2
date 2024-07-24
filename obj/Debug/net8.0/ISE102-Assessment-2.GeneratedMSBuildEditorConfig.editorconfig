@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ISE102_Assessment_2
-build_property.ProjectDir = /home/mct32/Repos/ISE102-Assessment-2/
+build_property.ProjectDir = C:\Users\MCT32\Repos\ISE102-Assessment-2\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

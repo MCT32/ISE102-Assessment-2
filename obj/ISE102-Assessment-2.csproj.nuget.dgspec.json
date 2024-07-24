@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/mct32/Repos/ISE102-Assessment-2/ISE102-Assessment-2.csproj": {}
+    "C:\\Users\\MCT32\\Repos\\ISE102-Assessment-2\\ISE102-Assessment-2.csproj": {}
   },
   "projects": {
-    "/home/mct32/Repos/ISE102-Assessment-2/ISE102-Assessment-2.csproj": {
+    "C:\\Users\\MCT32\\Repos\\ISE102-Assessment-2\\ISE102-Assessment-2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/mct32/Repos/ISE102-Assessment-2/ISE102-Assessment-2.csproj",
+        "projectUniqueName": "C:\\Users\\MCT32\\Repos\\ISE102-Assessment-2\\ISE102-Assessment-2.csproj",
         "projectName": "ISE102-Assessment-2",
-        "projectPath": "/home/mct32/Repos/ISE102-Assessment-2/ISE102-Assessment-2.csproj",
-        "packagesPath": "/home/mct32/.nuget/packages/",
-        "outputPath": "/home/mct32/Repos/ISE102-Assessment-2/obj/",
+        "projectPath": "C:\\Users\\MCT32\\Repos\\ISE102-Assessment-2\\ISE102-Assessment-2.csproj",
+        "packagesPath": "C:\\Users\\MCT32\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MCT32\\Repos\\ISE102-Assessment-2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/mct32/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\MCT32\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -32,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -48,18 +53,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.6, 8.0.6]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.106/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

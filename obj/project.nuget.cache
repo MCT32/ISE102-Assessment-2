@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gQM0BTjiG3K6y8+HNJEGOXWXXylUNzye4dM2vOJtZq+gLUK5LWH5+D8FVPfzJ6fhL06uxlivrOSIDs+j4ICAHw==",
+  "dgSpecHash": "aSGjpw4pHxU=",
   "success": true,
-  "projectFilePath": "/home/mct32/Repos/ISE102-Assessment-2/ISE102-Assessment-2.csproj",
-  "expectedPackageFiles": [
-    "/home/mct32/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.6/microsoft.aspnetcore.app.ref.8.0.6.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\MCT32\\Repos\\ISE102-Assessment-2\\ISE102-Assessment-2.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
