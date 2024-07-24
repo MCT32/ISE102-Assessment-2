@@ -37,14 +37,29 @@ string getPassword() {
     } while (true);
 }
 
+class Customer
+{
+    public string Username { get; set; }
+    public string Password { get; set; }
+
+    public float Balance { get; set; }
+
+    public Customer(string username, string password, float balance)
+    {
+        this.Username = username;
+        this.Password = password;
+        this.Balance = balance;
+    }
+}
+
 class Bank
 {
-    private Tuple<string, string>[] accounts;
+    private Customer[] accounts;
 
     public Bank()
     {
         accounts = [
-            new Tuple<string, string>("Joe.Doe", "Password123")
+            new Customer("Joe.Doe", "Password123", 1000)
         ];
     }
 
@@ -85,7 +100,7 @@ class Bank
         }
 
         // Check if the username is already taken
-        if (this.accounts.Any(account => account.Item1 == username)) {
+        if (this.accounts.Any(account => account.Username == username)) {
             Console.WriteLine("Username is already taken.");
             return false;
         }
