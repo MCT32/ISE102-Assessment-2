@@ -6,6 +6,7 @@
     <RootNamespace>ISE102_Assessment_2</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <StartupObject>Bank</StartupObject>
   </PropertyGroup>
 
 </Project>

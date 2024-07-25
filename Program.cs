@@ -1,43 +1,4 @@
-﻿// Function to get a password from the user while hiding the input
-string getPassword() {
-    // Buffer to store the entered password
-    string EnteredVal = "";
-
-    // Loop until password is entered
-    do {
-        // Read a single character from the user
-        ConsoleKeyInfo key = Console.ReadKey(true);
-
-        // If the user presses backspace, remove the last character from the password
-        if (key.Key == ConsoleKey.Backspace) {
-            // If the password is not empty, remove the last character from the password
-            if (EnteredVal.Length > 0) {
-                // Remove the last character from the buffer
-                EnteredVal = EnteredVal.Substring(0, (EnteredVal.Length - 1));
-                // Erase the last character from the screen
-                Console.Write("\b \b");
-            }
-        // If the user presses enter, return the password
-        } else if (key.Key == ConsoleKey.Enter) {
-            // First check if the password is empty
-            if (string.IsNullOrWhiteSpace(EnteredVal)) {
-                Console.WriteLine("");
-                Console.WriteLine("Empty value not allowed.");
-                // Recursively call the function to retry
-                return getPassword();
-            } else {
-                return EnteredVal;
-            }
-        // Otherwise, add the character to the password
-        } else {
-            EnteredVal += key.KeyChar;
-            // Display the character as a star
-            Console.Write("*");
-        }
-    } while (true);
-}
-
-// Class for storing customer information
+﻿// Class for storing customer information
 class Customer
 {
     // Login information
@@ -70,6 +31,45 @@ class Bank
             // Starting account as mentioned in the assignment
             new Customer("Joe.Doe", "Password123", 1000)
         ];
+    }
+
+    // Function to get a password from the user while hiding the input
+    string getPassword() {
+        // Buffer to store the entered password
+        string EnteredVal = "";
+
+        // Loop until password is entered
+        do {
+            // Read a single character from the user
+            ConsoleKeyInfo key = Console.ReadKey(true);
+
+            // If the user presses backspace, remove the last character from the password
+            if (key.Key == ConsoleKey.Backspace) {
+                // If the password is not empty, remove the last character from the password
+                if (EnteredVal.Length > 0) {
+                    // Remove the last character from the buffer
+                    EnteredVal = EnteredVal.Substring(0, (EnteredVal.Length - 1));
+                    // Erase the last character from the screen
+                    Console.Write("\b \b");
+                }
+            // If the user presses enter, return the password
+            } else if (key.Key == ConsoleKey.Enter) {
+                // First check if the password is empty
+                if (string.IsNullOrWhiteSpace(EnteredVal)) {
+                    Console.WriteLine("");
+                    Console.WriteLine("Empty value not allowed.");
+                    // Recursively call the function to retry
+                    return getPassword();
+                } else {
+                    return EnteredVal;
+                }
+            // Otherwise, add the character to the password
+            } else {
+                EnteredVal += key.KeyChar;
+                // Display the character as a star
+                Console.Write("*");
+            }
+        } while (true);
     }
 
     // Function to check if the password is valid
@@ -133,13 +133,9 @@ class Bank
     {
         
     }
-}
 
-// Main function to run the program
-static class Program
-{
     // Main function to run the program
-	static void Main(string[] args)
+	public static void Main(string[] args)
 	{
         // Welcome message
 		Console.WriteLine("Welcome to the bank!");
