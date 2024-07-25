@@ -37,13 +37,17 @@ string getPassword() {
     } while (true);
 }
 
+// Class for storing customer information
 class Customer
 {
+    // Login information
     public string Username { get; set; }
     public string Password { get; set; }
 
+    // Customer's current bank balance
     public float Balance { get; set; }
 
+    // Constructor to initialize customer information
     public Customer(string username, string password, float balance)
     {
         this.Username = username;
@@ -52,17 +56,23 @@ class Customer
     }
 }
 
+// Class for storing bank accounts and functions
 class Bank
 {
+    // List of customer accounts
     private Customer[] accounts;
 
+    // Constructor to initialize bank accounts
     public Bank()
     {
+        // Initialize list of customer accounts
         accounts = [
+            // Starting account as mentioned in the assignment
             new Customer("Joe.Doe", "Password123", 1000)
         ];
     }
 
+    // Function to check if the password is valid
     bool CheckPassword(string password)
     {
         // Check if the password is empty
@@ -77,14 +87,17 @@ class Bank
             return false;
         }
 
+        // Check if the password contains any whitespace
         if (password.Any(char.IsWhiteSpace)) {
             Console.WriteLine("Password cannot contain whitespace.");
             return false;
         }
 
+        // If all checks pass, return true
         return true;
     }
 
+    // Function to check if the username is valid
     bool CheckUsername(string username)
     {
         // Check if the username is empty
@@ -105,31 +118,40 @@ class Bank
             return false;
         }
 
+        // If all checks pass, return true
         return true;
     }
- 
+
+    // Function to login to the bank
     public void Login()
     {
         
     }
 
+    // Function to signup to the bank
     public void Signup()
     {
         
     }
 }
 
+// Main function to run the program
 static class Program
 {
+    // Main function to run the program
 	static void Main(string[] args)
 	{
+        // Welcome message
 		Console.WriteLine("Welcome to the bank!");
         Console.WriteLine("");
 
+        // Create a new bank object
 		var bank = new Bank();
 
+        // Main menu loop
         while (true)
         {
+            // Menu options
             Console.WriteLine("Menu:");
             Console.WriteLine("1. Login");
             Console.WriteLine("2. Signup");
@@ -137,8 +159,10 @@ static class Program
             Console.WriteLine("");
             Console.Write("Enter your choice: ");
 
+            // Read user input
             var choice = Console.ReadLine();
 
+            // Switch statement to handle user input
             switch (choice.Trim())
             {
                 case "1":
@@ -148,9 +172,12 @@ static class Program
                     bank.Signup();
                     break;
                 case "3":
+                    // Exit the program
                     Console.WriteLine("Goodbye!");
                     return;
                 default:
+                    // Invalid choice message
+                    // Get user input again
                     Console.WriteLine("Invalid choice!");
                     break;
             }
