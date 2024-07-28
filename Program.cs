@@ -1,4 +1,5 @@
 ﻿// Class for storing customer information
+
 class Customer
 {
     // Login information
@@ -29,7 +30,8 @@ class Bank
         // Initialize list of customer accounts
         accounts = [
             // Starting account as mentioned in the assignment
-            new Customer("Joe.Doe", "Password123", 1000)
+            new Customer("Joe.Doe", "Password123", 1000),
+            new Customer("Joestar", "Qwerty", 5)
         ];
     }
 
@@ -125,7 +127,21 @@ class Bank
     // Function to login to the bank
     public void Login()
     {
-        
+        Console.WriteLine("Please Enter Username:"); // this gives the prompt to the user to enter their username.
+        string username = Console.ReadLine(); //this reads the username that has been inputed by the user and stores it.
+         Customer customer = accounts.FirstOrDefault(account => account.Username == username); //This simply checks if the username that has been inputted exists within the array.
+         // if the username does not match this means it is null or not found which redirects to these 3 lines of codes which displays Invalid Username.
+         if (customer == null){ 
+            Console.WriteLine("Invalid Username");
+            return; // exits the function
+         }
+         Console.Write("Enter your password "); // this allows the user to input a password.
+         string password = getPassword(); //this calls the getPassword function to read the inputed function by the user.
+          if (customer.Password != password){ //This just checks if the password provided by the user matches the password stored in the signup.
+            Console.WriteLine("\nInvalid password"); // if the password fails to verify then this will display to the user that the password in invalid.
+            return; //exists the function
+          }
+          Console.WriteLine("\nSuccesful Login, Signing in...."); // similarly if the password is verified and is indeed correct, this will be displayed to the user instead.
     }
 
     // Function to signup to the bank
