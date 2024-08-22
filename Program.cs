@@ -267,12 +267,45 @@ class Bank
     }
 
     // Deposit money into account
-    public void Deposit(String username) {
+        public void Deposit(String username)
+    {
+        Customer customer = accounts.FirstOrDefault(account => account.Username == username);
 
+        // Prompt to user to enter the amount
+        Console.Write("Enter amount to deposit: ");
+        string input = Console.ReadLine();
+
+        // This part makes sure the amount which was entered is correct and does ot go over the balance amount. It also converts any input to a float value.
+        if (float.TryParse(input, out float amount) && amount > 0)
+        {
+            customer.Balance += amount;
+            Console.WriteLine($"Successfully deposited {amount:C}. New balance: {customer.Balance:C}");
+        }
+        else
+        {
+            Console.WriteLine("Invalid amount. Please enter a positive number.");
+        }
     }
 
-    // Withdraw from user account
-    public void Withdraw(String username) {
+    // Withdraw from user accounts
+    public void Withdraw(String username)
+    {
+        Customer customer = accounts.FirstOrDefault(account => account.Username == username);
 
+        Console.Write("Enter amount to withdraw: ");
+        string input = Console.ReadLine();
+
+        if (float.TryParse(input, out float amount) && amount > 0)
+        {
+            if (amount <= customer.Balance)
+            {
+                customer.Balance -= amount;
+                Console.WriteLine($"You have withdrew {amount:C}.balance after the withdraw: {customer.Balance:C}");
+            }
+            else
+            {
+                Console.WriteLine("Insufficient balance");
+            }
+        }
     }
 }
