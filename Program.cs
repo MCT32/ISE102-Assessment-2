@@ -22,7 +22,7 @@ class Customer
 class Bank
 {
     // List of customer accounts
-    private Customer[] accounts;
+    private List<Customer> accounts;
 
     // Constructor to initialize bank accounts
     public Bank()
@@ -84,7 +84,7 @@ class Bank
         }
 
         // Check if the password is at least 8 characters long
-        if (password.Length < 8) {
+        if (password.Length <= 8) {
             Console.WriteLine("Password must be at least 8 characters long.");
             return false;
         }
@@ -147,7 +147,34 @@ class Bank
     // Function to signup to the bank
     public void Signup()
     {
-        
+        // For George to do
+        // Creating the Username
+        Console.WriteLine("Hi! Welcome to the bank. What shall your username to be?");
+        string username = Console.ReadLine();
+
+        if (CheckUsername(username)) {
+            Console.WriteLine("Awesome! Now let's create your password.");
+        }
+        else
+        {
+            Console.WriteLine("Invalide username");
+            return;
+        }
+
+        Console.WriteLine("So what do you want your password to be?");
+        string password = getPassword();
+        Console.WriteLine("\n");
+
+        if (CheckPassword(password))
+        {
+            this.accounts.Add(new Customer(username, password, 0));
+            Console.WriteLine("Awesome! Your account has been created.");
+        }
+        else
+        {
+            Console.WriteLine("Invalid password");
+            return;
+        }
     }
 
     // Main function to run the program
