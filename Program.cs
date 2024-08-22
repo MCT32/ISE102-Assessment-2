@@ -142,6 +142,8 @@ class Bank
             return; //exists the function
           }
           Console.WriteLine("\nSuccesful Login, Signing in...."); // similarly if the password is verified and is indeed correct, this will be displayed to the user instead.
+
+        this.LoggedInMenu(username);
     }
 
     // Function to signup to the bank
@@ -222,4 +224,55 @@ class Bank
             }
         }
 	}
+
+    // Menu for once user is logged in
+    public void LoggedInMenu(String username) {
+        // Main menu loop
+        while (true)
+        {
+            // Welcome
+            Console.WriteLine(String.Format("Hello, {0}!", username));
+
+            // Menu options
+            Console.WriteLine("Menu:");
+            Console.WriteLine("1. Deposit");
+            Console.WriteLine("2. Withdraw");
+            Console.WriteLine("3. Log out");
+            Console.WriteLine("");
+            Console.Write("Enter your choice: ");
+
+            // Read user input
+            var choice = Console.ReadLine();
+
+            // Switch statement to handle user input
+            switch (choice.Trim())
+            {
+                case "1":
+                    this.Deposit(username);
+                    break;
+                case "2":
+                    this.Withdraw(username);
+                    break;
+                case "3":
+                    // Log out
+                    Console.WriteLine("Goodbye!");
+                    return;
+                default:
+                    // Invalid choice message
+                    // Get user input again
+                    Console.WriteLine("Invalid choice!");
+                    break;
+            }
+        }
+    }
+
+    // Deposit money into account
+    public void Deposit(String username) {
+
+    }
+
+    // Withdraw from user account
+    public void Withdraw(String username) {
+
+    }
 }
